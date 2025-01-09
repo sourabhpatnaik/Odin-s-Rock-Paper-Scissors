@@ -75,7 +75,25 @@ function playRound(humanChoice , computerChoice){
         humanScore++;
     }
     else{
+        computerScore++;
         alert("Computer Wins!!! " + computerChoice +" "+  "Beats"+ " " + humanChoice);
+    }
+}
+
+//Adding the game rule sets to five round
+
+function playGame(){
+    for(let i=0; i<=5; i++){
+        const humanSelection = getHumanChoice();
+        const computerSelection = getComputerChoice();
+        playRound(humanSelection, computerSelection);
+    }
+
+    if (humanScore>computerScore){
+        alert("Game Over! You Won!")
+    }
+    else{
+        alert("Game Over! Computer Won!")
     }
 }
 
@@ -88,4 +106,4 @@ console.log(humanSelection);
 console.log(computerSelection);
 
 
-console.log(playRound(humanSelection,computerSelection));
+playGame();
