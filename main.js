@@ -1,8 +1,8 @@
-// Getting Computer's Choice
+// Function for Getting Computer's Choice
 
 function getComputerChoice(){
     let num = 3;
-    const selectNum = Math.floor(Math.random(3)*num);
+    const selectNum = Math.floor(Math.random()*num);
 
     if (selectNum == 0){
         return "Rock";
@@ -16,3 +16,14 @@ function getComputerChoice(){
 };
 
 console.log(getComputerChoice());
+
+// Function for Getting Human Player's Choice
+
+function getHumanChoice(){
+    let humChoice = prompt("Enter Your Choice : ");
+
+    return humChoice;
+}
+
+console.log(getHumanChoice());
+
