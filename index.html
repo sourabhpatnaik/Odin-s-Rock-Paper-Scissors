@@ -1,30 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Rock Paper Scissors</title>
-</head>
-<body>
-    
+  </head>
+  <body>
     <div class="container">
-        <h1>Rock Paper Scissor Game</h1>
-        <p>Choose Your Choice: </p>
-        <div class="button-container">
-            <button id="btn-rock" onclick="playRound('rock')"><img src="https://wrpsa.com/wp-content/uploads/2021/08/rock.png" alt="rocksign"><span>Rock</span></button>
-        <button id="btn-paper" onclick="playRound('paper')"><img src="https://wrpsa.com/wp-content/uploads/2021/08/paper.png" alt="papersign"><span>Paper</span></button>
-        <button id="btn-scissors" onclick="playRound('scissors')"><img src="https://wrpsa.com/wp-content/uploads/2021/08/scissors.png" alt="scissorsign"><span>Scissors</span></button>
-        </div>
-        
-        <div id="result"></div>
+      <h1>Rock Paper Scissor Game</h1>
+      <p>Choose Your Choice:</p>
+      <div class="button-container">
+        <button id="btn-rock" onclick="playRound('rock')">
+          <img
+            src="https://wrpsa.com/wp-content/uploads/2021/08/rock.png"
+            alt="rocksign"
+          /><span>Rock</span>
+        </button>
+        <button id="btn-paper" onclick="playRound('paper')">
+          <img
+            src="https://wrpsa.com/wp-content/uploads/2021/08/paper.png"
+            alt="papersign"
+          /><span>Paper</span>
+        </button>
+        <button id="btn-scissors" onclick="playRound('scissors')">
+          <img
+            src="https://wrpsa.com/wp-content/uploads/2021/08/scissors.png"
+            alt="scissorsign"
+          /><span>Scissors</span>
+        </button>
+      </div>
 
-    <button id="reset">Reset</button>
+      <div id="result"></div>
+
+      <button id="reset">Reset</button>
     </div>
-    
-
-
 
     <script src="./Js/main.js"></script>
-</body>
+  </body>
 </html>

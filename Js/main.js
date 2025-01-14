@@ -10,9 +10,9 @@ let humanScore = 0;
 let computerScore = 0;
 
 //function for displaying message
-function showMessage(message){
-  let showResult = document.getElementById("result")
-  showResult.textContent = message
+function showMessage(message) {
+  let showResult = document.getElementById("result");
+  showResult.textContent = message;
 }
 
 // Function for Getting Computer's Choice
@@ -40,12 +40,11 @@ function getHumanChoice() {
     humanChoice == "paper" ||
     humanChoice == "scissors"
   ) {
-    console.log("clear")
+    console.log("clear");
   } else {
     return "Invalid Selection";
   }
 }
-
 
 // Function for winner
 
@@ -69,12 +68,9 @@ function playRound(humanChoice) {
   let computerChoice = getComputerChoice();
   let roundWinner = winner(humanChoice, computerChoice);
 
-  
-
   if (roundWinner == "tie") {
     alert("Its a TIE");
   } else if (roundWinner == "human") {
-    
     alert("You Won!!! " + humanChoice + " " + "Beats" + " " + computerChoice);
     humanScore++;
   } else {
@@ -84,52 +80,30 @@ function playRound(humanChoice) {
     );
   }
 
-  showMessage(`Your Choice: ${humanChoice} | Computer's Choice: ${computerChoice} | Human Score: ${humanScore} and Computer Score: ${computerScore}`)
+  showMessage(
+    `Your Choice: ${humanChoice} | Computer's Choice: ${computerChoice} | Human Score: ${humanScore} and Computer Score: ${computerScore}`
+  );
 
-  if(humanScore + computerScore == 5){
-    showMessage("GAME OVER!!!")
-    if(humanScore > computerScore){
-      showMessage("YOU WON!!!")
-      }
-      else if(humanScore<computerScore){
-        showMessage("COMPUTER WON!!!")
-      }
-      else{
-        showMessage("ITS A TIE")
-      }
-      humanScore=0
-      computerScore=0 
+  if (humanScore + computerScore == 5) {
+    showMessage("GAME OVER!!!");
+    if (humanScore > computerScore) {
+      showMessage("YOU WON!!!");
+    } else if (humanScore < computerScore) {
+      showMessage("COMPUTER WON!!!");
+    } else {
+      showMessage("ITS A TIE");
+    }
+    humanScore = 0;
+    computerScore = 0;
   }
-  
-    
-
 }
-
-
-
-//Adding the game rule sets to five round
-
-// function playGame() {
-//   for (let i = 0; i < 5; i++) {
-//     const humanSelection = getHumanChoice();
-//     const computerSelection = getComputerChoice();
-//     playRound(humanSelection, computerSelection);
-//   }
-
-//   if (humanScore > computerScore) {
-//     alert("Game Over! You Won!");
-//   } else {
-//     alert("Game Over! Computer Won!");
-//   }
-// }
-
 
 const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
 
 // Function for resetting page
-let resetPage = document.getElementById("reset")
+let resetPage = document.getElementById("reset");
 
-resetPage.addEventListener('click', (e)=>{
-location.reload()
-})
+resetPage.addEventListener("click", (e) => {
+  location.reload();
+});

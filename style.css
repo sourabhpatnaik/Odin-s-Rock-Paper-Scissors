@@ -26,7 +26,8 @@ h1 {
   box-shadow: 10px 10px 10px black;
 }
 
-p, #result {
+p,
+#result {
   font-size: 20px;
   color: #2a9daf;
   margin-bottom: 20px;
@@ -34,8 +35,9 @@ p, #result {
 }
 .button-container {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
   align-items: center;
   gap: 50px;
   margin-top: 20px;
@@ -43,7 +45,7 @@ p, #result {
 }
 
 button {
-  padding: 20px 50px;
+  padding: 10px 20px;
   border-radius: 10px;
   border: none;
   text-align: center;
@@ -52,6 +54,12 @@ button {
   color: white;
   box-shadow: 2px 2px 1px #645c86;
   font-weight: 900;
+  display: flex;
+  flex-direction: column;
+}
+button span {
+  margin: 5px auto;
+  text-align: center;
 }
 button img {
   height: 120px;
