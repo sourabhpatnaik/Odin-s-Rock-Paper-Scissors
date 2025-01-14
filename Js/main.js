@@ -9,6 +9,12 @@
 let humanScore = 0;
 let computerScore = 0;
 
+//function for displaying message
+function showMessage(message){
+  let showResult = document.getElementById("result")
+  showResult.textContent = message
+}
+
 // Function for Getting Computer's Choice
 
 function getComputerChoice() {
@@ -24,19 +30,38 @@ function getComputerChoice() {
   }
 }
 
-// console.log(getComputerChoice());
-
 // Function for Getting Human Player's Choice
 
 function getHumanChoice() {
-  let humChoice = prompt(
-    "Select rock or paper or scissors : "
-  ).toLocaleLowerCase();
+  let humanChoice;
 
-  return humChoice;
+  if (
+    humanChoice == "rock" ||
+    humanChoice == "paper" ||
+    humanChoice == "scissors"
+  ) {
+    let rockBtn = document.querySelector("#btn-rock");
+    let paperBtn = document.querySelector("#btn-paper");
+    let scissorBtn = document.querySelector("#btn-scissors");
+
+    rockBtn.addEventListener("click", () => {
+      console.log("rock")
+      return "rock";
+    });
+
+    paperBtn.addEventListener("click", () => {
+      return "paper";
+
+    });
+
+    scissorBtn.addEventListener("click", () => {
+      return "scissors";
+    });
+  } else {
+    return "Invalid Selection";
+  }
 }
 
-// console.log(getHumanChoice());
 
 // Function for winner
 
@@ -59,9 +84,12 @@ function winner(humanChoice, computerChoice) {
 function playRound(humanChoice, computerChoice) {
   let roundWinner = winner(humanChoice, computerChoice);
 
+  
+
   if (roundWinner == "tie") {
     alert("Its a TIE");
   } else if (roundWinner == "human") {
+    
     alert("You Won!!! " + humanChoice + " " + "Beats" + " " + computerChoice);
     humanScore++;
   } else {
@@ -70,28 +98,34 @@ function playRound(humanChoice, computerChoice) {
       "Computer Wins!!! " + computerChoice + " " + "Beats" + " " + humanChoice
     );
   }
+
+  showMessage(`Your Choice: ${humanChoice} | Computer's Choice: ${computerChoice} | Human Score: ${humanScore} and Computer Score: ${computerScore}`)
 }
+
+
 
 //Adding the game rule sets to five round
 
-function playGame() {
-  for (let i = 1; i <= 5; i++) {
-    const humanSelection = getHumanChoice();
-    const computerSelection = getComputerChoice();
-    playRound(humanSelection, computerSelection);
-  }
+// function playGame() {
+//   for (let i = 0; i < 5; i++) {
+//     const humanSelection = getHumanChoice();
+//     const computerSelection = getComputerChoice();
+//     playRound(humanSelection, computerSelection);
+//   }
 
-  if (humanScore > computerScore) {
-    alert("Game Over! You Won!");
-  } else {
-    alert("Game Over! Computer Won!");
-  }
-}
+//   if (humanScore > computerScore) {
+//     alert("Game Over! You Won!");
+//   } else {
+//     alert("Game Over! Computer Won!");
+//   }
+// }
 
 const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
 
-console.log(humanSelection);
-console.log(computerSelection);
+// Function for resetting page
+let resetPage = document.getElementById("reset")
 
-playGame();
+resetPage.addEventListener('click', (e)=>{
+location.reload()
+})
