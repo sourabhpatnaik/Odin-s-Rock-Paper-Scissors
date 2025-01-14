@@ -40,23 +40,7 @@ function getHumanChoice() {
     humanChoice == "paper" ||
     humanChoice == "scissors"
   ) {
-    let rockBtn = document.querySelector("#btn-rock");
-    let paperBtn = document.querySelector("#btn-paper");
-    let scissorBtn = document.querySelector("#btn-scissors");
-
-    rockBtn.addEventListener("click", () => {
-      console.log("rock")
-      return "rock";
-    });
-
-    paperBtn.addEventListener("click", () => {
-      return "paper";
-
-    });
-
-    scissorBtn.addEventListener("click", () => {
-      return "scissors";
-    });
+    console.log("clear")
   } else {
     return "Invalid Selection";
   }
@@ -81,7 +65,8 @@ function winner(humanChoice, computerChoice) {
 }
 
 // function for play round
-function playRound(humanChoice, computerChoice) {
+function playRound(humanChoice) {
+  let computerChoice = getComputerChoice();
   let roundWinner = winner(humanChoice, computerChoice);
 
   
@@ -100,6 +85,24 @@ function playRound(humanChoice, computerChoice) {
   }
 
   showMessage(`Your Choice: ${humanChoice} | Computer's Choice: ${computerChoice} | Human Score: ${humanScore} and Computer Score: ${computerScore}`)
+
+  if(humanScore + computerScore == 5){
+    showMessage("GAME OVER!!!")
+    if(humanScore > computerScore){
+      showMessage("YOU WON!!!")
+      }
+      else if(humanScore<computerScore){
+        showMessage("COMPUTER WON!!!")
+      }
+      else{
+        showMessage("ITS A TIE")
+      }
+      humanScore=0
+      computerScore=0 
+  }
+  
+    
+
 }
 
 
@@ -119,6 +122,7 @@ function playRound(humanChoice, computerChoice) {
 //     alert("Game Over! Computer Won!");
 //   }
 // }
+
 
 const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
